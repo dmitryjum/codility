@@ -8,8 +8,8 @@ def solution(p, s)
   biggest_cars.each do |capacity|
     seats_used += capacity
     cars_used += 1
-    puts cars_used
   end
+  cars_used
 end
 
 puts solution([1,4,1], [1,5,1])
