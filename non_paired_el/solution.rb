@@ -10,6 +10,8 @@ def solution1(a)
 end
 
 def solution2(a)
+  # XOR Cancellation: For any number x, x ^ x equals 0, and 0 ^ y equals y. Therefore, pairs of identical numbers cancel out.
+  # Efficiency: This method runs in O(n) time and uses O(1) extra space, compared to the original solution which uses an extra array and involves additional operations.
   a.reduce(0, :^)
 end
 
