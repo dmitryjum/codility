@@ -12,7 +12,28 @@ def solution(a)
   end
 end
 
-puts solution([1,3,6,4,1,2])
-puts solution([1,2,3])
-puts solution([4,5,6])
-puts solution([-1,-3])
+# puts solution([1,3,6,4,1,2]) #5
+# puts solution([1,2,3]) #4
+# puts solution([4,5,6]) #1
+# puts solution([-1,-3]) #1
+
+def solution2(a)
+  n = a.length
+  present = Array.new(n + 2, false)
+  a.each do |x|
+    if x > 0 && x <= n + 1
+      present[x] = true
+    end
+  end
+
+  (1..n+1).each do |i|
+    return i unless present[i]
+  end
+end
+
+puts solution2([1,3,6,4,1,2]) #5
+puts solution2([1,2,3]) #4
+puts solution2([4,5,6]) #1
+puts solution2([-1,-3]) #1
+puts solution2([1,2,1,1,1,])
+puts solution2([2,2,2,2])
