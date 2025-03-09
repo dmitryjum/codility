@@ -20,6 +20,18 @@ def solution(s, p, q)
   result
 end
 
+def prefix_sums(a)
+  n = a.length
+  p = Array.new(n + 1, 0)
+  (1..n).each do |i|
+    p[i] = p[i - 1] + a[i - 1] # p[1] = 0 + 
+  end
+  p
+end
+
+def solution2(s,p,q)
+end
+
 s = "CAGCCTA"
 first = [2,5,0]
 second = [4,5,6]
