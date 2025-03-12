@@ -6,7 +6,6 @@ def solution(a)
   (0...a_len-2).each do |i|
     (i+1...a_len-1).each do |j|
       (j+1...a_len).each do |k|
-        puts "#{a[i]}, #{a[j]}, #{a[k]}"
         product =  a[i] * a[j] * a[k]
         max_product = product if product > max_product
       end
@@ -35,11 +34,11 @@ def solution2(a)
       max3 = num
     end
 
-    if num < min2
-      min2 = num
-    elsif num < min1
+    if num < min1
       min2 = min1
       min1 = num
+    elsif num < min2
+      min2 = num
     end
   end
   [max1 * max2 * max3, max1 * min1 * min2].max
