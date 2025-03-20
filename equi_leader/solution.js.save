@@ -1,0 +1,26 @@
+function solution(A) {
+  const halfLen = A.length / 2
+  let stack = []
+  let dominator;
+  let counter = 0
+  A.forEach(n => {
+   if (stack.length === 0 || stack[stack.length - 1] === n) {
+      if (stack[stack.length - 1] == n) {
+        counter++;
+        if (counter > halfLen) {
+          console.log(n)
+          dominator = n;
+          return;
+        }
+      }
+      stack.push(n)
+    } else {
+      stack.pop()
+    }
+  })
+  return dominator;
+}
+
+console.log(solution([4,3,4,4,4,2])) // 2
+console.log(solution([3,4,3,2,3,-1,3,3]))
+console.log(solution([1,2,3,4,5,5,6,9,14,2,2,2,2]))
